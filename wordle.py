@@ -28,8 +28,43 @@ def genWord(length = 0):
 
 
 
+
+# String into list
+def strtolist(x):
+    """Turns string into list
+    Args: x (string)
+    Retuns: list"""
+
+    if type(x) != str:
+        raise TypeError("Input must be a string")
+
+    output = []
+    for i in x:
+        output.append(i)
+    return output
+
+
+
+
+# List into string
+def listtostr(x):
+    """Turns list minto a string
+    Args: x (list)
+    Returns: string"""
+
+    if type(x) != list:
+        raise TypeError("Input must be a list")
+    
+    output = ""
+    for i in x:
+        output += i
+    return output
+
+
+
 def match(guess, word):
-    """Args: guess (string), word (string)
+    """Cool description 😎
+    Args: guess (string), word (string)
     Returns: string"""
     # checks if args are strings
     if type(guess) != str or type(word) != str:
@@ -39,31 +74,21 @@ def match(guess, word):
     if len(guess) != len(word):
         raise ValueError("Strings must be the same length")
 
-# this shit still ain't work'n :(
+    guessList = strtolist(guess)
+    wordList = strtolist(word)
 
-    # for i in range(0, len(guess)):
-    #     if guess[i] == word[i]:
-    #         if i == 0:
-    #             correct = colored(guess[i], "green")
-    #         else:
-    #             correct = correct + colored(guess[i], "green")
-    #     else:
-    #         if i == 0:
-    #             correct = guess[i]
-    #         else:
-    #             correct = correct + guess[i]
-    for i in word:
-        if guess.find(i) != word.find(i):
-            guess = guess.replace(i, colored(i, "yellow"))
+    # Finds exact matches
+    for i in range(len(word)):
+        if guessList[i] == wordList[i]:
+            guessList[i] = colored(guessList[i], "green")
 
-    for i in word:
-        if guess.find(i) == word.find(i):
-            guess = guess.replace(i, colored(i, "green"))
-
-    return guess
-
-
-
-y = input()
-x = input()
-print(match(x, y))
+    # Finds characters that are in the word but with the wrong index
+    for i in range(len(word)):
+        for c in range(len(guess)):
+            if wordList[i] == guessList[c] and i != c:
+                guessList[c] = colored(guessList[c], "yellow")
+    
+        
+    output = listtostr(guessList)
+    
+    return output
