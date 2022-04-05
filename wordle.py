@@ -1,7 +1,7 @@
 # Modules
-from requests import get
-from random import choice
-from termcolor import colored
+from requests import get          # Sends get requests to websites
+from random import choice         # Picks random stuff from specified list
+from termcolor import colored     # Makes colored text
 
 
 
@@ -62,6 +62,7 @@ def listtostr(x):
 
 
 
+# Adds the colores to the guess. Basically the wordle in wordle
 def match(guess, word):
     """Colores the letters in the guess that match the word
     Args: guess (string), word (string)
