@@ -42,7 +42,7 @@ while True:
 
     # If user has hit max tries
     while guessCount == 6:
-        cprint("\nYou ran out of tires...", "red")
+        cprint("\nYou ran out of tries...", "red")
         print("The word was " + colored(secret, 'green'))
         print(colored("\nWould you like to try again? ", "green") + colored("(Y/N)", "yellow"))
         # Yes or no
