@@ -13,14 +13,25 @@ from termcolor import colored, cprint            # For printing colored text
 
 # Main game
 # ////////////////////////////////////////////////
+system("cls" if name == "nt" else "clear")
+
+cprint("Wordle!\n", "green", attrs=["bold"])
+cprint("How to play:\n", "blue", attrs=["bold"])
+print("""      You have 6 attempts to guess a 5 letter word.
+      Each time you guess, the letters in your guess will be colored.
+      If a letter is in the word and in the correct place, it will be colored green.
+      If a letter is in the word but not in the correct place, it will be colored yellow.
+      If a letter is not in the word, it will not be colored.
+      Any guess that is not 5 letters long will be invalid.
+      Any guess that is not a valid word will be invalid.\n\n""" + colored("Note:", "red", attrs=["bold"]) + """ The word list is not perfect.
+      Some words may be invalid.\n""")
+input(colored("Press enter to continue", "green", attrs=["bold"]))
 
 # Makes game vars
 secret = wordle.genWord(5)
 guess = ""
 guesses = []
 guessCount = 0
-
-
 
 # Clear screen
 system("cls" if name == "nt" else "clear")
@@ -30,7 +41,8 @@ while True:
     # If user has hit max tries
     while guessCount == 6:
         cprint("\nYou ran out of tires...", "red")
-        print(colored("Would you like to try again? ", "green") + colored("(Y/N)", "yellow"))
+        print("The word was " + colored(secret, 'green'))
+        print(colored("\nWould you like to try again? ", "green") + colored("(Y/N)", "yellow"))
         # Yes or no
         answer = input().lower()
         # If user chose no
@@ -121,5 +133,4 @@ while True:
     # Clears the screen, prints the list of guesses, and go's to the start of the loop
     system("cls" if name == "nt" else "clear")
     for i in guesses: print(i)
-
 # ////////////////////////////////////////////////
