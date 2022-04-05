@@ -40,38 +40,6 @@ system("cls" if name == "nt" else "clear")
 # Main loop
 while True:
 
-    # If user has hit max tries
-    while guessCount == 6:
-        cprint("\nYou ran out of tries...", "red")
-        print("The word was " + colored(secret, 'green'))
-        print(colored("\nWould you like to try again? ", "green") + colored("(Y/N)", "yellow"))
-        # Yes or no
-        answer = input().lower()
-        # If user chose no
-        if answer == "n":
-            # clear screen and exit
-            system("cls" if name == "nt" else "clear")
-            cprint("Thanks for playing :)", "green", attrs=["bold"])
-            sleep(2)
-            exit()
-        # If user chose yes
-        elif answer == "y":
-            # Reset vars and break out of loop
-            secret = wordle.genWord(5)
-            guess = ""
-            guesses = []
-            guessCount = 0
-            system("cls" if name == "nt" else "clear")
-            break
-        # Invalid input
-        else:
-            cprint("\nInvalid input...", "red")
-            sleep(1)
-            system("cls" if name == "nt" else "clear")
-            for i in guesses: print(i)
-    
-    
-    
     # If the word was guessed
     while guess == secret:
         cprint("\nYou guessed the word!", "green")
@@ -102,9 +70,41 @@ while True:
             sleep(1)
             system("cls" if name == "nt" else "clear")
             for i in guesses: print(i)
+            
+            
+            
+    # If user has hit max tries
+    while guessCount == 6:
+        cprint("\nYou ran out of tries...", "red")
+        print("The word was " + colored(secret, 'green'))
+        print(colored("\nWould you like to try again? ", "green") + colored("(Y/N)", "yellow"))
+        # Yes or no
+        answer = input().lower()
+        # If user chose no
+        if answer == "n":
+            # clear screen and exit
+            system("cls" if name == "nt" else "clear")
+            cprint("Thanks for playing :)", "green", attrs=["bold"])
+            sleep(2)
+            exit()
+        # If user chose yes
+        elif answer == "y":
+            # Reset vars and break out of loop
+            secret = wordle.genWord(5)
+            guess = ""
+            guesses = []
+            guessCount = 0
+            system("cls" if name == "nt" else "clear")
+            break
+        # Invalid input
+        else:
+            cprint("\nInvalid input...", "red")
+            sleep(1)
+            system("cls" if name == "nt" else "clear")
+            for i in guesses: print(i)
 
 
-    
+
     # Users guess
     guess = input("").lower()
     
