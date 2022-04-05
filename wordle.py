@@ -48,7 +48,7 @@ def strtolist(x):
 
 # List into string
 def listtostr(x):
-    """Turns list minto a string
+    """Turns list into a string
     Args: x (list)
     Returns: string"""
 
