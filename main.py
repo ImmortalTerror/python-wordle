@@ -106,7 +106,7 @@ while True:
 
     
     # Users guess
-    guess = input("")
+    guess = input("").lower()
     
     # Checks if its in the word list
     if guess not in wordle.allWords:

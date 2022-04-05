@@ -2,4 +2,4 @@
 
 Exact command used:
 
-`nuitka --standalone --onefile --remove-output --output-dir=bin main.py`
+`nuitka --standalone --onefile --remove-output --output-dir=bin -o "wordle.exe" main.py`
