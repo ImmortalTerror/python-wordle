@@ -63,7 +63,7 @@ def listtostr(x):
 
 
 def match(guess, word):
-    """Cool description 😎
+    """Colores the letters in the guess that match the word
     Args: guess (string), word (string)
     Returns: string"""
     # checks if args are strings
