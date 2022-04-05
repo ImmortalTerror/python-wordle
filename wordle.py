@@ -7,7 +7,7 @@ from termcolor import colored     # Makes colored text
 
 # genWord Function
 # Generates random word
-allWords = get("https://www.mit.edu/~ecprice/wordlist.10000").text.splitlines()
+allWords = get("https://www.mit.edu/~ecprice/wordlist.100000").text.splitlines()
 
 def genWord(length = 0):
     """Generates random word of given length
