@@ -13,8 +13,10 @@ from termcolor import colored, cprint            # For printing colored text
 
 # Main game
 # ////////////////////////////////////////////////
+# Clears screen. This is just to make windows machines happy
 system("cls" if name == "nt" else "clear")
 
+# Main menu
 cprint("Wordle!\n", "green", attrs=["bold"])
 cprint("How to play:\n", "blue", attrs=["bold"])
 print("""      You have 6 attempts to guess a 5 letter word.
