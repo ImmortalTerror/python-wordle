@@ -1,6 +1,9 @@
 # Python Wordle Clone
 
 This is a Wordle clone I made for IST.
+
+I used a word list that was pulled from Wordles source code. [Word list](https://github.com/tabatkins/wordle-list)
+
 I will add a good readme.md when I feel like it
 
 ## Join my Discord server
