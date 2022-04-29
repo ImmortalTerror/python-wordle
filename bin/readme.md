@@ -1,5 +1,5 @@
-# Compiled with nuitka
+# Compiled with pyinstaller
 
 Exact command used:
 
-`nuitka --standalone --onefile --remove-output --output-dir=bin -o "wordle.exe" main.py`
+`pyinstaller -D -F -n "wordle" --distpath bin --clean  main.py`
