@@ -37,6 +37,8 @@ guessCount = 0
 
 # Clear screen
 system("cls" if name == "nt" else "clear")
+print("Guesses:\n")
+
 # Main loop
 while True:
 
@@ -63,12 +65,14 @@ while True:
             guessCount = 0
             secret = wordle.genWord(5)
             system("cls" if name == "nt" else "clear")
+            print("Guesses:\n")
             break
         # Invalid input
         else:
             cprint("\nInvalid input...", "red")
             sleep(1)
             system("cls" if name == "nt" else "clear")
+            print("Guesses:\n")
             for i in guesses: print(i)
             
             
@@ -95,12 +99,14 @@ while True:
             guesses = []
             guessCount = 0
             system("cls" if name == "nt" else "clear")
+            print("Guesses:\n")
             break
         # Invalid input
         else:
             cprint("\nInvalid input...", "red")
             sleep(1)
             system("cls" if name == "nt" else "clear")
+            print("Guesses:\n")
             for i in guesses: print(i)
 
 
@@ -113,6 +119,7 @@ while True:
         cprint("\nInvalid word...", "red")
         sleep(1)
         system("cls" if name == "nt" else "clear")
+        print("Guesses:\n")
         for i in guesses: print(i)
         continue
 
@@ -123,6 +130,7 @@ while True:
         cprint("\nInput length must be 5...", "red")
         sleep(1)
         system("cls" if name == "nt" else "clear")
+        print("Guesses:\n")
         for i in guesses: print(i)
         continue
 
@@ -134,5 +142,6 @@ while True:
     guesses.append(match)
     # Clears the screen, prints the list of guesses, and go's to the start of the loop
     system("cls" if name == "nt" else "clear")
+    print("Guesses:\n")
     for i in guesses: print(i)
 # ////////////////////////////////////////////////
