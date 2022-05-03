@@ -25,10 +25,9 @@ def genWord(length = 0):
         return choice(correctWords)
     else:
         return choice(allWords)
-
-
-
-
+    
+    
+    
 # String into list
 def strtolist(x):
     """Turns string into list
