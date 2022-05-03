@@ -2,4 +2,4 @@
 
 Exact command used:
 
-`pyinstaller -D -F -n "wordle" --distpath bin --clean  main.py`
+`pyinstaller -D -F -n "wordle" --distpath bin --clean -i NONE main.py`
