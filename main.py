@@ -29,8 +29,7 @@ def main():
         Any guess that is not 5 letters long will be invalid.
         Any guess that is not a valid word will be invalid.\n\n"""
         + colored("Note:", "red", attrs=["bold"])
-        + """ The word list is not perfect.
-      Some words may be invalid.\n"""
+        + " The word list is not perfect.\n      Some words may be invalid.\n"
     )
     input(colored("Press enter to continue", "green", attrs=["bold"]))
 
