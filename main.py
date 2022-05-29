@@ -163,6 +163,6 @@ def main():
     # ////////////////////////////////////////////////
 
 
-# Checks if file is being run as a script and not a modula
+# Checks if file is being run as a script and not a module
 if __name__ == "__main__":
     main()
