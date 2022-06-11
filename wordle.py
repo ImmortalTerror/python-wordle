@@ -1,8 +1,7 @@
 # Modules
-from requests import get          # Sends get requests to websites
-from random import choice         # Picks random stuff from specified list
-from termcolor import colored     # Makes colored text
-
+from random import choice  # Picks random stuff from specified list
+from requests import get  # Sends get requests to websites
+from termcolor import colored  # Makes colored text
 
 # genWord Function
 # Generates random word

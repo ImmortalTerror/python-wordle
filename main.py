@@ -1,16 +1,16 @@
 # Python "Wordle clone" game by Levi Miller for IST Y9
 
+# Modules
+# ////////////////////////////////////////////////
+from os import system, name                     # For clearing screen
+from time import sleep                          # For pausing
+from termcolor import colored, cprint           # For printing colored text
+import wordle                                   # Wordle module from wordle.py
+# ////////////////////////////////////////////////
 
 # Main function
 def main():
 
-    # Modules
-    # ////////////////////////////////////////////////
-    import wordle                                   # Wordle module from wordle.py
-    from os import system, name                     # For clearing screen
-    from time import sleep                          # For pausing
-    from termcolor import colored, cprint           # For printing colored text
-    # ////////////////////////////////////////////////
 
     # Main game
     # ////////////////////////////////////////////////
