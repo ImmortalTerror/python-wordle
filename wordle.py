@@ -28,36 +28,6 @@ def genWord(length=0):
         return choice(allWords)
 
 
-# String into list
-def strtolist(x):
-    """Turns string into list
-    Args: x (string)
-    Retuns: list"""
-
-    if type(x) != str:
-        raise TypeError("Input must be a string")
-
-    output = []
-    for i in x:
-        output.append(i)
-    return output
-
-
-# List into string
-def listtostr(x):
-    """Turns list into a string
-    Args: x (list)
-    Returns: string"""
-
-    if type(x) != list:
-        raise TypeError("Input must be a list")
-
-    output = ""
-    for i in x:
-        output += i
-    return output
-
-
 # Adds the colores to the guess. Basically the wordle in wordle
 def match(guess, word):
     """Colores the letters in the guess that match the word
@@ -71,8 +41,13 @@ def match(guess, word):
     if len(guess) != len(word):
         raise ValueError("Strings must be the same length")
 
-    guessList = strtolist(guess)
-    wordList = strtolist(word)
+    # Turns guess and word into lists of characters
+    guessList = []
+    for i in guess:
+        guessList.append(i)
+    wordList = []
+    for i in word:
+        wordList.append(i)
 
     # Finds exact matches
     for i in range(len(word)):
@@ -85,6 +60,9 @@ def match(guess, word):
             if wordList[i] == guessList[c] and i != c:
                 guessList[c] = colored(guessList[c], "yellow")
 
-    output = listtostr(guessList)
+    # Converts the list to a string and returns it
+    output = ""
+    for i in guessList:
+        output += i
 
     return output
